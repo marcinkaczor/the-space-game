@@ -1,0 +1,24 @@
+import React from 'react'
+import { Link as RouterLink } from 'react-router-dom'
+
+import Page, { PageHeader, PageBody } from '../components/UI/Page'
+import StellarLink from '../components/UI/Link'
+
+import Game from '../containers/Game'
+
+import * as ROUTES from '../constants/routes'
+
+const Battle = () => (
+  <Page>
+    <PageHeader variant='h2' align='left'>
+      <StellarLink component={RouterLink} to={ROUTES.HOME}>
+        the space game
+      </StellarLink>
+    </PageHeader>
+    <PageBody>
+      <Game />
+    </PageBody>
+  </Page>
+)
+
+export default Battle

@@ -5,8 +5,6 @@ import withFetcher from '../../components/Fetcher'
 
 import Player from './Player'
 
-import * as API from '../../constants/api'
-
 const Game = ({ data, loading, error }) => (
   <>
     {error && <Caption>{error}</Caption>}
@@ -20,4 +18,4 @@ const Game = ({ data, loading, error }) => (
   </>
 )
 
-export default withFetcher(API.PEOPLE)(Game)
+export default withFetcher(Game)

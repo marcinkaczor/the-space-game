@@ -9,25 +9,25 @@ import {
 const StellarCard = ({ resource }) => (
   <Box mx='2vw'>
     <Grow in>
-      <Card>
+      <Card style={{ width: '140px', height: '240px' }}>
         <CardContent>
           <Box display='flex' flexDirection='column' alignItems='center'>
-            <Avatar>LS</Avatar>
-            <Typography style={{ textAlign: 'center', margin: '15px 0' }}>Luke Skywalker</Typography>
+            <Avatar>{resource.name.charAt(0)}</Avatar>
+            <Typography style={{ textAlign: 'center', margin: '15px 0' }}>{resource.name}</Typography>
           </Box>
           <Table padding='none'>
             <TableBody>
               <TableRow>
                 <TableCell>Height</TableCell>
-                <TableCell align='right'>177</TableCell>
+                <TableCell align='right'>{resource.height}</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell>Mass</TableCell>
-                <TableCell align='right'>77</TableCell>
+                <TableCell align='right'>{resource.mass}</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Hair color</TableCell>
-                <TableCell align='right'>blonde</TableCell>
+                <TableCell>Gender</TableCell>
+                <TableCell align='right'>{resource.gender}</TableCell>
               </TableRow>
             </TableBody>
           </Table>

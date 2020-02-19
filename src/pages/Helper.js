@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { Box, FormControl, InputLabel, Select, MenuItem, FormHelperText } from '@material-ui/core'
 
+import { ResourceContext } from '../components/Contexts'
+
 const Helper = () => {
-  const [resource, setResource] = useState('people')
+  const [resource, setResource] = useContext(ResourceContext)
 
   const handleChange = e => {
     setResource(e.target.value)

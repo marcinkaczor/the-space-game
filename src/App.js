@@ -3,10 +3,13 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/styles'
+
+import { withResourceContext } from './components/Contexts'
 import theme from './components/Theme'
 
 import Home from './pages/Home'
 import Battle from './pages/Battle'
+
 import * as ROUTES from './constants/routes'
 
 const App = () => (
@@ -22,4 +25,4 @@ const App = () => (
   </ThemeProvider>
 )
 
-export default App
+export default withResourceContext(App)

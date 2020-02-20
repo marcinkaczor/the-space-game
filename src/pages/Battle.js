@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link as RouterLink } from 'react-router-dom'
 
 import Page, { PageHeader, PageBody } from '../components/UI/Page'
@@ -22,5 +23,9 @@ const Battle = ({ resourceContext: [resource] }) => (
     </PageBody>
   </Page>
 )
+
+Battle.propTypes = {
+  resourceContext: PropTypes.array.isRequired
+}
 
 export default withResourceContextConsumer(Battle)

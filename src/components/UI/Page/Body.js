@@ -16,7 +16,8 @@ const PageBody = ({ children, column }) => (
 )
 
 PageBody.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  column: PropTypes.bool
 }
 
 export default PageBody

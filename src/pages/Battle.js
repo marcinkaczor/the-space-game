@@ -16,7 +16,7 @@ const Battle = () => {
 
   return (
     <Page>
-      <PageHeader variant='h2' align='left'>
+      <PageHeader>
         <StellarLink component={RouterLink} to={ROUTES.HOME}>
           the space game
         </StellarLink>

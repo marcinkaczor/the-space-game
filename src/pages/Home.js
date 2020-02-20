@@ -10,7 +10,7 @@ import Helper from './Helper'
 
 const Home = () => (
   <Page>
-    <PageHeader variant='h1' align='center'>
+    <PageHeader home>
       the space game
     </PageHeader>
     <PageBody column>

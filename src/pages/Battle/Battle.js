@@ -19,7 +19,7 @@ const Battle = ({ resourceContext: [resource] }) => (
       </StellarLink>
     </PageHeader>
     <PageBody>
-      <Game url={resource} />
+      <Game resource={resource} />
     </PageBody>
   </Page>
 )

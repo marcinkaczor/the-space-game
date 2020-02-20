@@ -22,8 +22,8 @@ const withFetcher = Component => props => {
       }
     }
 
-    fetchData(props.url)
-  }, [props.url])
+    fetchData(props.resource)
+  }, [props.resource])
 
   return <Component {...props} data={data} loading={loading} error={error} />
 }

@@ -3,16 +3,18 @@ import React from 'react'
 import Caption from '../UI/Caption'
 import withFetcher from '../Fetcher'
 
-import Player from './Player'
+import Area from './Area'
 
-const Game = ({ data, loading, error }) => (
+import * as RESOURCES from '../../constants/resources'
+
+const Game = ({ resource, data, loading, error }) => (
   <>
     {error && <Caption>{error}</Caption>}
     {loading && <Caption>Loading ...</Caption>}
     {data && (
       <>
-        <Player data={data} />
-        <Player data={data} />
+        <Area data={data} starships={resource === RESOURCES.STARSHIPS} />
+        <Area data={data} starships={resource === RESOURCES.STARSHIPS} />
       </>
     )}
   </>

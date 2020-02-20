@@ -1,3 +1,11 @@
-import { ResourceContext, withResourceContext } from './Contexts'
+import {
+  ResourceContext,
+  withResourceContextProvider,
+  withResourceContextConsumer
+} from './Contexts'
 
-export { ResourceContext, withResourceContext }
+export {
+  ResourceContext,
+  withResourceContextProvider,
+  withResourceContextConsumer
+}

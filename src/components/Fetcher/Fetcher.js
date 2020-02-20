@@ -12,6 +12,7 @@ const withFetcher = Component => props => {
 
       try {
         const results = await axios.get(url)
+
         setData(results.data.results)
       } catch (error) {
         setError(error.toString())

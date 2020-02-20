@@ -3,18 +3,26 @@ import { Link as RouterLink } from 'react-router-dom'
 
 import Page, { PageHeader, PageBody } from '../components/UI/Page'
 import StellarButton from '../components/UI/Button'
+import StellarSelect from '../components/UI/Select'
 
+import { withResourceContextConsumer } from '../components/Contexts'
+
+import * as RESOURCES from '../constants/resources'
 import * as ROUTES from '../constants/routes'
 
-import Helper from './Helper'
-
-const Home = () => (
+const Home = ({ resourceContext: [resource, setResource] }) => (
   <Page>
     <PageHeader home>
       the space game
     </PageHeader>
     <PageBody column>
-      <Helper />
+      <StellarSelect
+        label='resource'
+        helper='select which resource to play against'
+        values={[RESOURCES.PEOPLE, RESOURCES.STARSHIPS]}
+        currentValue={resource}
+        setCurrentValue={setResource}
+      />
       <StellarButton component={RouterLink} to={ROUTES.BATTLE}>
         START GAME
       </StellarButton>
@@ -22,4 +30,4 @@ const Home = () => (
   </Page>
 )
 
-export default Home
+export default withResourceContextConsumer(Home)

@@ -9,7 +9,6 @@ import { withResourceContextConsumer } from '../components/Contexts'
 import Game from '../containers/Game'
 
 import * as ROUTES from '../constants/routes'
-import * as API from '../constants/api'
 
 const Battle = ({ resourceContext: [resource] }) => (
   <Page>
@@ -19,7 +18,7 @@ const Battle = ({ resourceContext: [resource] }) => (
       </StellarLink>
     </PageHeader>
     <PageBody>
-      <Game url={`${API.ROOT}${resource}`} />
+      <Game url={resource} />
     </PageBody>
   </Page>
 )

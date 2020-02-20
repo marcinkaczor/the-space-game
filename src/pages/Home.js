@@ -2,8 +2,8 @@ import React from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 
 import Page, { PageHeader, PageBody } from '../components/UI/Page'
-import StellarButton from '../components/UI/Button'
 import StellarSelect from '../components/UI/Select'
+import StellarButton from '../components/UI/Button'
 
 import { withResourceContextConsumer } from '../components/Contexts'
 

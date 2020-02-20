@@ -8,8 +8,8 @@ import { withResourceContextConsumer } from '../components/Contexts'
 
 import Game from '../containers/Game'
 
-import * as API from '../constants/api'
 import * as ROUTES from '../constants/routes'
+import * as API from '../constants/api'
 
 const Battle = ({ resourceContext: [resource] }) => (
   <Page>

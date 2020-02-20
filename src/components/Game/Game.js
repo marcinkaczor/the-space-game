@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Caption from '../../components/UI/Caption'
-import withFetcher from '../../components/Fetcher'
+import Caption from '../UI/Caption'
+import withFetcher from '../Fetcher'
 
 import Player from './Player'
 

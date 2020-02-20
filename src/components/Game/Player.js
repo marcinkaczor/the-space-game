@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-import StellarButton from '../../components/UI/Button'
-import StellarCard from '../../components/UI/Card/Card'
+import StellarButton from '../UI/Button'
+import StellarCard from '../UI/Card/Card'
 
 const Player = ({ data }) => {
   const [resource, setResource] = useState(null)

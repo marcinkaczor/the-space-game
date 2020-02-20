@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link as RouterLink } from 'react-router-dom'
 
-import Page, { PageHeader, PageBody } from '../components/UI/Page'
-import StellarSelect from '../components/UI/Select'
-import StellarButton from '../components/UI/Button'
+import Page, { PageHeader, PageBody } from '../../components/UI/Page'
+import StellarSelect from '../../components/UI/Select'
+import StellarButton from '../../components/UI/Button'
 
-import { withResourceContextConsumer } from '../components/Contexts'
+import { withResourceContextConsumer } from '../../components/Contexts'
 
-import * as RESOURCES from '../constants/resources'
-import * as ROUTES from '../constants/routes'
+import * as RESOURCES from '../../constants/resources'
+import * as ROUTES from '../../constants/routes'
 
 const Home = ({ resourceContext: [resource, setResource] }) => (
   <Page>

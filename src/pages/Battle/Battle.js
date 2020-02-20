@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link as RouterLink } from 'react-router-dom'
 
-import Page, { PageHeader, PageBody } from '../components/UI/Page'
-import StellarLink from '../components/UI/Link'
+import Page, { PageHeader, PageBody } from '../../components/UI/Page'
+import StellarLink from '../../components/UI/Link'
 
-import { withResourceContextConsumer } from '../components/Contexts'
+import { withResourceContextConsumer } from '../../components/Contexts'
 
-import Game from '../containers/Game'
+import Game from '../../components/Game'
 
-import * as ROUTES from '../constants/routes'
+import * as ROUTES from '../../constants/routes'
 
 const Battle = ({ resourceContext: [resource] }) => (
   <Page>

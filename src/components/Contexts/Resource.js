@@ -6,7 +6,7 @@ import * as RESOURCES from '../../constants/resources'
 
 const ResourceContext = createContext()
 
-const withResourceContextProvider = Component => props => {
+const withResourceProvider = Component => props => {
   const [resource, setResource] = useSessionState(['resource', RESOURCES.PEOPLE])
 
   return (
@@ -16,10 +16,10 @@ const withResourceContextProvider = Component => props => {
   )
 }
 
-const withResourceContextConsumer = Component => props => {
+const withResourceConsumer = Component => props => {
   const [resource, setResource] = useContext(ResourceContext)
 
   return <Component {...props} resourceContext={[resource, setResource]} />
 }
 
-export { ResourceContext, withResourceContextProvider, withResourceContextConsumer }
+export { ResourceContext, withResourceProvider, withResourceConsumer }

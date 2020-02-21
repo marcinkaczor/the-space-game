@@ -1,11 +1,20 @@
 import {
   ResourceContext,
-  withResourceContextProvider,
-  withResourceContextConsumer
-} from './Contexts'
+  withResourceProvider,
+  withResourceConsumer
+} from './Resource'
+
+import {
+  ScoreContext,
+  withScoreProvider,
+  withScoreConsumer
+} from './Score'
 
 export {
   ResourceContext,
-  withResourceContextProvider,
-  withResourceContextConsumer
+  withResourceProvider,
+  withResourceConsumer,
+  ScoreContext,
+  withScoreProvider,
+  withScoreConsumer
 }

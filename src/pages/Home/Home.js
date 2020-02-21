@@ -6,7 +6,7 @@ import Page, { PageHeader, PageBody } from '../../components/UI/Page'
 import StellarSelect from '../../components/UI/Select'
 import StellarButton from '../../components/UI/Button'
 
-import { withResourceContextConsumer } from '../../components/Contexts'
+import { withResourceConsumer } from '../../components/Contexts'
 
 import * as RESOURCES from '../../constants/resources'
 import * as ROUTES from '../../constants/routes'
@@ -35,4 +35,4 @@ Home.propTypes = {
   resourceContext: PropTypes.array.isRequired
 }
 
-export default withResourceContextConsumer(Home)
+export default withResourceConsumer(Home)

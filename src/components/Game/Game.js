@@ -59,8 +59,8 @@ const Game = ({ data, loading, error, url, score, setScore }) => {
 
   return (
     <>
-      {error && <Caption>{error}</Caption>}
-      {loading && <Caption>Loading ...</Caption>}
+      {error && <Caption title={error} />}
+      {loading && <Caption title='Loading ...' />}
       {data && [PLAYERS.LEFT, PLAYERS.RIGHT].map((player, i) => (
         <Fragment key={i}>
           {item[player] ? (

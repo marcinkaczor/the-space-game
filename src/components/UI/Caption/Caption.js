@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Typography } from '@material-ui/core'
 
-const Caption = ({ children }) => (
-  <Typography variant='caption'>{children}</Typography>
+const Caption = ({ title = 'Loading ...' }) => (
+  <Typography variant='caption'>{title}</Typography>
 )
 
 Caption.propTypes = {
-  children: PropTypes.node.isRequired
+  title: PropTypes.string
 }
 
 export default Caption

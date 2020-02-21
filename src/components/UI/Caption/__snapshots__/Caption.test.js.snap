@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Caption snapshot renders 1`] = `
+<span
+  className="MuiTypography-root MuiTypography-caption"
+>
+  Loading ...
+</span>
+`;

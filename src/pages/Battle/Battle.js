@@ -19,7 +19,7 @@ const Battle = ({ resourceContext: [resource], scoreContext: [score, setScore] }
       </StellarLink>
     </PageHeader>
     <PageBody>
-      <Game resource={resource} score={score} setScore={setScore} />
+      <Game url={resource} score={score} setScore={setScore} />
     </PageBody>
   </Page>
 )

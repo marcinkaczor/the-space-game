@@ -25,7 +25,7 @@ const initialItem = {
 
 const initialWinner = null
 
-const Game = ({ data, loading, error, resource, score, setScore }) => {
+const Game = ({ data, loading, error, url, score, setScore }) => {
   const [board, setBoard] = useState(initialBoard)
   const [item, setItem] = useState(initialItem)
   const [winner, setWinner] = useState(initialWinner)
@@ -43,7 +43,7 @@ const Game = ({ data, loading, error, resource, score, setScore }) => {
     setBoard(initialBoard)
   }
 
-  const attributes = resource === RESOURCES.PEOPLE
+  const attributes = url === RESOURCES.PEOPLE
     ? ATTRIBUTES.PEOPLE_ATTRIBUTES : ATTRIBUTES.STARSHIPS_ATTRIBUTES
 
   const handleButtonClick = player => {

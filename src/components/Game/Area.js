@@ -8,16 +8,16 @@ import StellarCard from '../UI/Card/Card'
 import { randomItem } from '../../utils'
 
 const Area = ({ player, data, attributes, board, setBoard }) => {
-  const [resource, setResource] = useState(null)
+  const [item, setItem] = useState(null)
 
   const handleClick = () => {
-    const randomResource = randomItem(data)
-    setResource(randomResource)
-    setBoard({ ...board, [player]: Number(randomResource[attributes[0]]) })
+    const selectedItem = randomItem(data)
+    setItem(selectedItem)
+    setBoard({ ...board, [player]: Number(selectedItem[attributes[0]]) })
   }
 
-  if (resource) {
-    return <StellarCard title={resource.name} resource={resource} attributes={attributes} />
+  if (item) {
+    return <StellarCard title={item.name} item={item} attributes={attributes} />
   }
 
   return <StellarButton onClick={handleClick}>DRAW THE CARD</StellarButton>

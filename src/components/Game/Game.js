@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState } from 'react'
 import { Snackbar, Button } from '@material-ui/core'
 
 import Caption from '../UI/Caption'
@@ -6,10 +6,11 @@ import withFetcher from '../Fetcher'
 
 import Area from './Area'
 
+import { increaseScore } from '../../utils'
+
 import * as ATTRIBUTES from '../../constants/attributes'
 import * as PLAYERS from '../../constants/players'
 import * as RESOURCES from '../../constants/resources'
-import { increaseScore } from '../../utils'
 
 const initialBoard = {
   [PLAYERS.LEFT]: null,
@@ -47,15 +48,13 @@ const Game = ({ data, loading, error, resource, score, setScore }) => {
       {error && <Caption>{error}</Caption>}
       {loading && <Caption>Loading ...</Caption>}
       {data && [PLAYERS.LEFT, PLAYERS.RIGHT].map((player, i) => (
-        <Fragment key={i}>
-          <Area player={player} data={data} attributes={attributes} board={board} setBoard={setBoard} />
-          <Snackbar
-            open={Boolean(winner)}
-            message={winner === PLAYERS.RIGHT || winner === PLAYERS.LEFT ? `Player ${winner} wins!` : 'Draw!'}
-            action={<Button size='small' onClick={handleClick}>PLAY AGAIN</Button>}
-          />
-        </Fragment>
+        <Area key={i} player={player} data={data} attributes={attributes} board={board} setBoard={setBoard} />
       ))}
+      <Snackbar
+        open={Boolean(winner)}
+        message={winner === PLAYERS.RIGHT || winner === PLAYERS.LEFT ? `Player ${winner} wins!` : 'Draw!'}
+        action={<Button size='small' onClick={handleClick}>PLAY AGAIN</Button>}
+      />
     </>
   )
 }

@@ -1,9 +1,11 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 
+const color = '#FAFAFA'
+
 const theme = createMuiTheme({
   typography: {
     h1: {
-      color: '#fafafa',
+      color: color,
       fontFamily: '"Press Start 2P"',
       fontSize: '2.75rem',
       letterSpacing: '.75rem',
@@ -12,7 +14,7 @@ const theme = createMuiTheme({
       paddingBottom: '4rem'
     },
     h2: {
-      color: '#fafafa',
+      color: color,
       fontFamily: '"Press Start 2P"',
       fontSize: '1rem',
       letterSpacing: '0rem',
@@ -21,16 +23,16 @@ const theme = createMuiTheme({
       paddingBottom: '2rem'
     },
     caption: {
-      color: '#fafafa',
+      color: color,
       fontSize: '.825rem'
     }
   },
   overrides: {
     MuiFormLabel: {
       root: {
-        color: '#fafafa',
+        color: color,
         '&$focused': {
-          color: '#fafafa'
+          color: color
         }
       }
     },
@@ -49,12 +51,12 @@ const theme = createMuiTheme({
     },
     MuiInputBase: {
       root: {
-        color: '#fafafa'
+        color: color
       }
     },
     MuiSelect: {
       icon: {
-        color: '#fafafa'
+        color: color
       }
     },
     MuiCard: {
@@ -91,7 +93,7 @@ const theme = createMuiTheme({
     MuiSnackbarContent: {
       root: {
         color: 'rgba(0, 0, 0, 0.87)',
-        backgroundColor: '#fafafa'
+        backgroundColor: color
       }
     },
     MuiTableCell: {
@@ -101,5 +103,7 @@ const theme = createMuiTheme({
     }
   }
 })
+
+export { color }
 
 export default theme

@@ -26,8 +26,7 @@ const Area = ({ player, data, attributes, board, setBoard }) => {
 Area.propTypes = {
   player: PropTypes.string.isRequired,
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
-  attributes: PropTypes.arrayOf(PropTypes.string).isRequired,
-  // setWinner: PropTypes.func.isRequired
+  attributes: PropTypes.arrayOf(PropTypes.string).isRequired
 }
 
 export default Area

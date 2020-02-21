@@ -4,7 +4,6 @@ import { Link as RouterLink } from 'react-router-dom'
 
 import Page, { PageHeader, PageBody } from '../../components/UI/Page'
 import StellarLink from '../../components/UI/Link'
-import Score from '../../components/UI/Score'
 
 import { withResourceConsumer, withScoreConsumer } from '../../components/Contexts'
 

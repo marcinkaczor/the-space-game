@@ -1,11 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 
 const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#fafafa'
-    }
-  },
   typography: {
     h1: {
       color: '#fafafa',
@@ -33,7 +28,10 @@ const theme = createMuiTheme({
   overrides: {
     MuiFormLabel: {
       root: {
-        color: '#fafafa'
+        color: '#fafafa',
+        '&$focused': {
+          color: '#fafafa'
+        }
       }
     },
     MuiInput: {
@@ -57,6 +55,26 @@ const theme = createMuiTheme({
     MuiSelect: {
       icon: {
         color: '#fafafa'
+      }
+    },
+    MuiCard: {
+      root: {
+        width: '140px',
+        height: '240px',
+        marginLeft: '2vw',
+        marginRight: '2vw'
+      }
+    },
+    MuiCardHeader: {
+      root: {
+        flexDirection: 'column'
+      },
+      avatar: {
+        marginRight: 0,
+        marginBottom: '.5rem'
+      },
+      content: {
+        textAlign: 'center'
       }
     },
     MuiTableCell: {

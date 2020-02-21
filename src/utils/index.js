@@ -2,7 +2,10 @@ const capitalizeFirstLetter = string => string.charAt(0).toUpperCase() + string.
 
 const randomItemFromArray = array => array[Math.floor(Math.random() * array.length)]
 
+const getFirstChar = string => string.charAt(0)
+
 export {
   capitalizeFirstLetter as capitalize,
-  randomItemFromArray as randomItem
+  randomItemFromArray as randomItem,
+  getFirstChar
 }

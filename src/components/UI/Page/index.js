@@ -1,7 +1,7 @@
 import Page from './Page'
 
-import Header from './Header'
-import Body from './Body'
+import Header from './Header/Header'
+import Body from './Body/Body'
 
 export { Header as PageHeader, Body as PageBody }
 

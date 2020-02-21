@@ -13,7 +13,7 @@ describe('PageBody', () => {
     expect(tree).toMatchSnapshot()
   })
 
-  it('renders with column and child', () => {
+  it('renders with child and column prop', () => {
     const column = true
     const Child = () => <div>Hello from child</div>
 

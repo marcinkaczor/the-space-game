@@ -3,5 +3,9 @@
 exports[`PageBody snapshot renders 1`] = `
 <div
   className="MuiBox-root MuiBox-root-2"
-/>
+>
+  <div>
+    Hello
+  </div>
+</div>
 `;

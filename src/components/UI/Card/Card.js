@@ -27,7 +27,7 @@ const StellarCard = ({ title, item, attributes }) => (
 )
 
 StellarCard.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   item: PropTypes.object.isRequired,
   attributes: PropTypes.array.isRequired
 }

@@ -1,9 +1,9 @@
 import React, { useState, Fragment } from 'react'
-import { Snackbar, Button } from '@material-ui/core'
+import { Snackbar, Button as MuiButton } from '@material-ui/core'
 
 import Caption from '../UI/Caption'
-import StellarCard from '../UI/Card'
-import StellarButton from '../UI/Button'
+import Card from '../UI/Card'
+import Button from '../UI/Button'
 
 import withFetcher from '../Fetcher'
 
@@ -64,16 +64,16 @@ const Game = ({ data, loading, error, url, score, setScore }) => {
       {data && [PLAYERS.LEFT, PLAYERS.RIGHT].map((player, i) => (
         <Fragment key={i}>
           {item[player] ? (
-            <StellarCard title={item[player].name} item={item[player]} attributes={attributes} />
+            <Card title={item[player].name} item={item[player]} attributes={attributes} />
           ) : (
-            <StellarButton onClick={() => handleButtonClick(player)}>DRAW THE CARD</StellarButton>
+            <Button onClick={() => handleButtonClick(player)}>DRAW THE CARD</Button>
           )}
         </Fragment>
       ))}
       <Snackbar
         open={Boolean(winner)}
         message={winner === PLAYERS.RIGHT || winner === PLAYERS.LEFT ? `Player ${winner} wins!` : 'Draw!'}
-        action={<Button size='small' onClick={handleSnackbarClick}>PLAY AGAIN</Button>}
+        action={<MuiButton size='small' onClick={handleSnackbarClick}>PLAY AGAIN</MuiButton>}
       />
     </>
   )

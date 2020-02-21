@@ -22,8 +22,8 @@ const StellarSelect = ({ label, helper, values, currentValue, setCurrentValue })
 )
 
 StellarSelect.propTypes = {
-  label: PropTypes.string,
-  helper: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  helper: PropTypes.string.isRequired,
   values: PropTypes.arrayOf(PropTypes.string).isRequired,
   currentValue: PropTypes.string.isRequired,
   setCurrentValue: PropTypes.func.isRequired

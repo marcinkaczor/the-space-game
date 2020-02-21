@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { Link as RouterLink } from 'react-router-dom'
 
 import Page, { PageHeader, PageBody } from '../../components/UI/Page'
-import StellarSelect from '../../components/UI/Select'
-import StellarButton from '../../components/UI/Button'
+import Select from '../../components/UI/Select'
+import Button from '../../components/UI/Button'
 
 import { withResourceConsumer } from '../../components/Contexts'
 
@@ -17,16 +17,16 @@ const Home = ({ resourceContext: [resource, setResource] }) => (
       the space game
     </PageHeader>
     <PageBody column>
-      <StellarSelect
+      <Select
         label='resource'
         helper='select which resource to play against'
         values={[RESOURCES.PEOPLE, RESOURCES.STARSHIPS]}
         currentValue={resource}
         setCurrentValue={setResource}
       />
-      <StellarButton component={RouterLink} to={ROUTES.BATTLE}>
+      <Button component={RouterLink} to={ROUTES.BATTLE}>
         START GAME
-      </StellarButton>
+      </Button>
     </PageBody>
   </Page>
 )

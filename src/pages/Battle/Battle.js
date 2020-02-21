@@ -3,20 +3,19 @@ import PropTypes from 'prop-types'
 import { Link as RouterLink } from 'react-router-dom'
 
 import Page, { PageHeader, PageBody } from '../../components/UI/Page'
-import StellarLink from '../../components/UI/Link'
+import Link from '../../components/UI/Link'
+import Game from '../../components/Game'
 
 import { withResourceConsumer, withScoreConsumer } from '../../components/Contexts'
-
-import Game from '../../components/Game'
 
 import * as ROUTES from '../../constants/routes'
 
 const Battle = ({ resourceContext: [resource], scoreContext: [score, setScore] }) => (
   <Page>
     <PageHeader addition={score}>
-      <StellarLink component={RouterLink} to={ROUTES.HOME}>
+      <Link component={RouterLink} to={ROUTES.HOME}>
         the space game
-      </StellarLink>
+      </Link>
     </PageHeader>
     <PageBody>
       <Game url={resource} score={score} setScore={setScore} />
@@ -25,7 +24,8 @@ const Battle = ({ resourceContext: [resource], scoreContext: [score, setScore] }
 )
 
 Battle.propTypes = {
-  resourceContext: PropTypes.array.isRequired
+  resourceContext: PropTypes.array.isRequired,
+  scoreContext: PropTypes.array.isRequired
 }
 
 export default withScoreConsumer(withResourceConsumer(Battle))

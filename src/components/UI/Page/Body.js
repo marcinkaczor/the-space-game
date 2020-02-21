@@ -16,7 +16,7 @@ const PageBody = ({ children, column }) => (
 )
 
 PageBody.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   column: PropTypes.bool
 }
 

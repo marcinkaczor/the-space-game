@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react'
-import { Snackbar, Button as MuiButton } from '@material-ui/core'
+import { Button as MuiButton, Snackbar } from '@material-ui/core'
 
 import Caption from '../UI/Caption'
 import Card from '../UI/Card'

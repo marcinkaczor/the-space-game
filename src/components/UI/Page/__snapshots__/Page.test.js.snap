@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page snapshot renders 1`] = `
+<div
+  className="MuiContainer-root MuiContainer-maxWidthSm"
+>
+  <div
+    className="MuiBox-root MuiBox-root-10"
+  >
+    <div>
+      Hello
+    </div>
+  </div>
+</div>
+`;

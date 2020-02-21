@@ -62,12 +62,15 @@ const theme = createMuiTheme({
         width: '140px',
         height: '240px',
         marginLeft: '2vw',
-        marginRight: '2vw'
+        marginRight: '2vw',
+        dispay: 'flex',
+        justifyContent: 'space-between'
       }
     },
     MuiCardHeader: {
       root: {
-        flexDirection: 'column'
+        flexDirection: 'column',
+        paddingBottom: '8px'
       },
       avatar: {
         marginRight: 0,
@@ -75,11 +78,25 @@ const theme = createMuiTheme({
       },
       content: {
         textAlign: 'center'
+      },
+      title: {
+        height: '40px'
+      }
+    },
+    MuiCardContent: {
+      root: {
+        paddingTop: '8px'
+      }
+    },
+    MuiSnackbarContent: {
+      root: {
+        color: 'rgba(0, 0, 0, 0.87)',
+        backgroundColor: '#fafafa'
       }
     },
     MuiTableCell: {
       root: {
-        fontSize: '.8rem'
+        fontSize: '.7rem'
       }
     }
   }

@@ -11,7 +11,7 @@ import Game from '../../components/Game'
 
 import * as ROUTES from '../../constants/routes'
 
-const Battle = ({ resourceContext: [resource], scoreContext: [score] }) => (
+const Battle = ({ resourceContext: [resource], scoreContext: [score, setScore] }) => (
   <Page>
     <PageHeader addition={score}>
       <StellarLink component={RouterLink} to={ROUTES.HOME}>
@@ -19,7 +19,7 @@ const Battle = ({ resourceContext: [resource], scoreContext: [score] }) => (
       </StellarLink>
     </PageHeader>
     <PageBody>
-      <Game resource={resource} />
+      <Game resource={resource} score={score} setScore={setScore} />
     </PageBody>
   </Page>
 )

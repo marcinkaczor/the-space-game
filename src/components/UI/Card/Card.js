@@ -4,6 +4,8 @@ import { Grow, Card, CardContent, Avatar, Table, TableBody, TableRow, TableCell,
 
 import { capitalize, getFirstChar } from '../../../utils'
 
+const firstRowStyles = { fontWeight: 'bold', fontSize: '.85rem' }
+
 const StellarCard = ({ title, resource, attributes }) => (
   <Grow in>
     <Card>
@@ -13,8 +15,8 @@ const StellarCard = ({ title, resource, attributes }) => (
           <TableBody>
             {attributes.map((attribute, i) => (
               <TableRow key={i}>
-                <TableCell>{capitalize(attribute)}</TableCell>
-                <TableCell align='right'>{resource[attribute]}</TableCell>
+                <TableCell style={!i ? firstRowStyles : {}}>{capitalize(attribute)}</TableCell>
+                <TableCell style={!i ? firstRowStyles : {}} align='right'>{resource[attribute]}</TableCell>
               </TableRow>
             ))}
           </TableBody>

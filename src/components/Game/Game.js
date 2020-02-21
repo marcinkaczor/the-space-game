@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, Fragment } from 'react'
+import { Snackbar, Button } from '@material-ui/core'
 
 import Caption from '../UI/Caption'
 import withFetcher from '../Fetcher'
@@ -6,22 +7,53 @@ import withFetcher from '../Fetcher'
 import Area from './Area'
 
 import * as ATTRIBUTES from '../../constants/attributes'
+import * as PLAYERS from '../../constants/players'
 import * as RESOURCES from '../../constants/resources'
+import { increaseScore } from '../../utils'
 
-const Game = ({ resource, data, loading, error }) => {
+const initialBoard = {
+  [PLAYERS.LEFT]: null,
+  [PLAYERS.RIGHT]: null
+}
+
+const initialWinner = null
+
+const Game = ({ data, loading, error, resource, score, setScore }) => {
+  const [board, setBoard] = useState(initialBoard)
+  const [winner, setWinner] = useState(null)
+
+  if (Object.values(board).every(Boolean)) {
+    if (board[PLAYERS.LEFT] > board[PLAYERS.RIGHT]) {
+      setWinner(PLAYERS.LEFT)
+      setScore(increaseScore(PLAYERS.LEFT)(score))
+    } else if (board[PLAYERS.LEFT] < board[PLAYERS.RIGHT]) {
+      setWinner(PLAYERS.RIGHT)
+      setScore(increaseScore(PLAYERS.RIGHT)(score))
+    }
+    setBoard(initialBoard)
+  }
+
   const attributes = resource === RESOURCES.PEOPLE
     ? ATTRIBUTES.PEOPLE_ATTRIBUTES : ATTRIBUTES.STARSHIPS_ATTRIBUTES
+
+  const handleClick = () => {
+    setWinner(initialWinner)
+  }
 
   return (
     <>
       {error && <Caption>{error}</Caption>}
       {loading && <Caption>Loading ...</Caption>}
-      {data && (
-        <>
-          <Area data={data} attributes={attributes} />
-          <Area data={data} attributes={attributes} />
-        </>
-      )}
+      {data && [PLAYERS.LEFT, PLAYERS.RIGHT].map((player, i) => (
+        <Fragment key={i}>
+          <Area player={player} data={data} attributes={attributes} board={board} setBoard={setBoard} />
+          <Snackbar
+            open={Boolean(winner)}
+            message={winner ? `Player ${winner} wins!` : 'Draw!'}
+            action={<Button size='small' onClick={handleClick}>PLAY AGAIN</Button>}
+          />
+        </Fragment>
+      ))}
     </>
   )
 }

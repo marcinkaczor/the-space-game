@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import { Snackbar, Button } from '@material-ui/core'
 
 import Caption from '../UI/Caption'
+import StellarCard from '../UI/Card'
+import StellarButton from '../UI/Button'
+
 import withFetcher from '../Fetcher'
 
-import Area from './Area'
-
-import { increaseScore } from '../../utils'
+import { randomItem, increaseScore } from '../../utils'
 
 import * as ATTRIBUTES from '../../constants/attributes'
 import * as PLAYERS from '../../constants/players'
@@ -17,10 +18,16 @@ const initialBoard = {
   [PLAYERS.RIGHT]: null
 }
 
+const initialItem = {
+  [PLAYERS.LEFT]: null,
+  [PLAYERS.RIGHT]: null
+}
+
 const initialWinner = null
 
 const Game = ({ data, loading, error, resource, score, setScore }) => {
   const [board, setBoard] = useState(initialBoard)
+  const [item, setItem] = useState(initialItem)
   const [winner, setWinner] = useState(initialWinner)
 
   if (Object.values(board).every(Boolean)) {
@@ -39,8 +46,15 @@ const Game = ({ data, loading, error, resource, score, setScore }) => {
   const attributes = resource === RESOURCES.PEOPLE
     ? ATTRIBUTES.PEOPLE_ATTRIBUTES : ATTRIBUTES.STARSHIPS_ATTRIBUTES
 
-  const handleClick = () => {
+  const handleButtonClick = player => {
+    const selectedItem = randomItem(data)
+    setItem({ ...item, [player]: selectedItem })
+    setBoard({ ...board, [player]: Number(selectedItem[attributes[0]]) })
+  }
+
+  const handleSnackbarClick = () => {
     setWinner(initialWinner)
+    setItem(initialItem)
   }
 
   return (
@@ -48,12 +62,18 @@ const Game = ({ data, loading, error, resource, score, setScore }) => {
       {error && <Caption>{error}</Caption>}
       {loading && <Caption>Loading ...</Caption>}
       {data && [PLAYERS.LEFT, PLAYERS.RIGHT].map((player, i) => (
-        <Area key={i} player={player} data={data} attributes={attributes} board={board} setBoard={setBoard} />
+        <Fragment key={i}>
+          {item[player] ? (
+            <StellarCard title={item[player].name} item={item[player]} attributes={attributes} />
+          ) : (
+            <StellarButton onClick={() => handleButtonClick(player)}>DRAW THE CARD</StellarButton>
+          )}
+        </Fragment>
       ))}
       <Snackbar
         open={Boolean(winner)}
         message={winner === PLAYERS.RIGHT || winner === PLAYERS.LEFT ? `Player ${winner} wins!` : 'Draw!'}
-        action={<Button size='small' onClick={handleClick}>PLAY AGAIN</Button>}
+        action={<Button size='small' onClick={handleSnackbarClick}>PLAY AGAIN</Button>}
       />
     </>
   )

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Box, FormControl, InputLabel, Select, MenuItem, FormHelperText } from '@material-ui/core'
 
 import { capitalize } from '../../../utils'
@@ -19,5 +20,13 @@ const StellarSelect = ({ label, helper, values, currentValue, setCurrentValue })
     </FormControl>
   </Box>
 )
+
+StellarSelect.propTypes = {
+  label: PropTypes.string,
+  helper: PropTypes.string,
+  values: PropTypes.arrayOf(PropTypes.string).isRequired,
+  currentValue: PropTypes.string.isRequired,
+  setCurrentValue: PropTypes.func.isRequired
+}
 
 export default StellarSelect

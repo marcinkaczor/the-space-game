@@ -1,5 +1,5 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import { Grow, Card, CardContent, Avatar, Table, TableBody, TableRow, TableCell, CardHeader } from '@material-ui/core'
 
 import { capitalize, getFirstChar } from '../../../utils'
@@ -23,5 +23,11 @@ const StellarCard = ({ title, resource, attributes }) => (
     </Card>
   </Grow>
 )
+
+StellarCard.propTypes = {
+  title: PropTypes.string,
+  resource: PropTypes.object.isRequired,
+  attributes: PropTypes.array.isRequired
+}
 
 export default StellarCard

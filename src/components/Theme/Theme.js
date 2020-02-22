@@ -49,6 +49,11 @@ const theme = createMuiTheme({
         }
       }
     },
+    MuiFormControl: {
+      root: {
+        marginBottom: '40px'
+      }
+    },
     MuiInputBase: {
       root: {
         color: color

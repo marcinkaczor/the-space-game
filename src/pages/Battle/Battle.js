@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link as RouterLink } from 'react-router-dom'
+import { compose } from 'recompose'
 
 import Page, { PageHeader, PageBody } from '../../components/UI/Page'
 import Link from '../../components/UI/Link'
@@ -28,4 +29,4 @@ Battle.propTypes = {
   scoreContext: PropTypes.array.isRequired
 }
 
-export default withScoreConsumer(withResourceConsumer(Battle))
+export default compose(withScoreConsumer, withResourceConsumer)(Battle)

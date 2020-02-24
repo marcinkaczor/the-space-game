@@ -7,8 +7,8 @@ import { capitalize } from '../../../utils'
 
 import Select from '.'
 
-const label = 'hello'
-const helper = 'from select'
+const label = 'Label'
+const helper = 'Select which value you want to choose'
 const values = ['foo', 'bar']
 const currentValue = 'foo'
 const setCurrentValue = () => {}

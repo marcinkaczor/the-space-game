@@ -7,9 +7,9 @@ exports[`Select snapshot renders 1`] = `
   <label
     className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
     data-shrink={true}
-    id="select-hello-label"
+    id="select-Label-label"
   >
-    Hello
+    Label
   </label>
   <div
     className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
@@ -17,9 +17,9 @@ exports[`Select snapshot renders 1`] = `
   >
     <div
       aria-haspopup="listbox"
-      aria-labelledby="select-hello-label select-hello"
+      aria-labelledby="select-Label-label select-Label"
       className="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
-      id="select-hello"
+      id="select-Label"
       onBlur={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}

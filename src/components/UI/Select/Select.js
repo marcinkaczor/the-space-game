@@ -6,22 +6,22 @@ import { capitalize } from '../../../utils'
 
 const StellarSelect = ({ label, helper, values, currentValue, setCurrentValue }) => (
   <FormControl>
-    <InputLabel id={`select-${label}-label`}>{capitalize(label)}</InputLabel>
+    <InputLabel id={`select-${label.trim()}-label`}>{capitalize(label)}</InputLabel>
     <Select
-      labelId={`select-${label}-label`}
-      id={`select-${label}`}
+      labelId={`select-${label.trim()}-label`}
+      id={`select-${label.trim()}`}
       value={currentValue}
       onChange={e => setCurrentValue(e.target.value)}
     >
       {values.map((value, i) => <MenuItem key={i} value={value}>{capitalize(value)}</MenuItem>)}
     </Select>
-    <FormHelperText>{capitalize(helper)}</FormHelperText>
+    {helper && <FormHelperText>{capitalize(helper)}</FormHelperText>}
   </FormControl>
 )
 
 StellarSelect.propTypes = {
   label: PropTypes.string.isRequired,
-  helper: PropTypes.string.isRequired,
+  helper: PropTypes.string,
   values: PropTypes.arrayOf(PropTypes.string).isRequired,
   currentValue: PropTypes.string.isRequired,
   setCurrentValue: PropTypes.func.isRequired

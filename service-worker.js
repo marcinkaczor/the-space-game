@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/the-space-game/precache-manifest.aae145e49d7998fbb96cc750c27daf96.js"
+  "/the-space-game/precache-manifest.402557dec4836ff84e2827c02ec97837.js"
 );
 
 self.addEventListener('message', (event) => {

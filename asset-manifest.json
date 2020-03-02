@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/the-space-game/static/css/main.2946d1b5.chunk.css",
+    "main.js": "/the-space-game/static/js/main.0211633f.chunk.js",
+    "main.js.map": "/the-space-game/static/js/main.0211633f.chunk.js.map",
+    "runtime-main.js": "/the-space-game/static/js/runtime-main.48e59352.js",
+    "runtime-main.js.map": "/the-space-game/static/js/runtime-main.48e59352.js.map",
+    "static/js/2.a2d16be9.chunk.js": "/the-space-game/static/js/2.a2d16be9.chunk.js",
+    "static/js/2.a2d16be9.chunk.js.map": "/the-space-game/static/js/2.a2d16be9.chunk.js.map",
+    "index.html": "/the-space-game/index.html",
+    "precache-manifest.aae145e49d7998fbb96cc750c27daf96.js": "/the-space-game/precache-manifest.aae145e49d7998fbb96cc750c27daf96.js",
+    "service-worker.js": "/the-space-game/service-worker.js",
+    "static/css/main.2946d1b5.chunk.css.map": "/the-space-game/static/css/main.2946d1b5.chunk.css.map",
+    "static/js/2.a2d16be9.chunk.js.LICENSE.txt": "/the-space-game/static/js/2.a2d16be9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.48e59352.js",
+    "static/js/2.a2d16be9.chunk.js",
+    "static/css/main.2946d1b5.chunk.css",
+    "static/js/main.0211633f.chunk.js"
+  ]
+}

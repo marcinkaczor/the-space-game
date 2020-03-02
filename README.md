@@ -1,5 +1,5 @@
 # The Space Game
-Simple card game written in React JS library
+Simple card game written in React JS library. I invite you to see live demo [here](https://marcinkaczor.github.io/the-space-game/).
 
 ## Notes
 Hello. This is a simple card game, which is a showcase of my programming skills.

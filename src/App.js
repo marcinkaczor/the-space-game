@@ -15,7 +15,7 @@ import * as ROUTES from './constants/routes'
 const App = () => (
   <ThemeProvider theme={theme}>
     <CssBaseline />
-    <Router>
+    <Router basename='/the-space-game'>
       <Switch>
         <Route exact path={ROUTES.HOME} component={Home} />
         <Route path={ROUTES.BATTLE} component={Battle} />

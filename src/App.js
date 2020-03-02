@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 
-import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/styles'
 
 import { withResourceProvider, withScoreProvider } from './components/Contexts'
@@ -14,7 +13,6 @@ import * as ROUTES from './constants/routes'
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <CssBaseline />
     <Router basename='/the-space-game'>
       <Switch>
         <Route exact path={ROUTES.HOME} component={Home} />
